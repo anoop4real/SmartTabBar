@@ -27,6 +27,18 @@ class FirstViewController: UIViewController {
         return btn
     }()
     
+    private lazy var btn4: UIButton = {
+        let btn = ViewFactory.createASimpleButtonWith(title: "Select 2")
+        btn.addTarget(self, action: #selector(select2), for: .touchUpInside)
+        return btn
+    }()
+    
+    private lazy var btn5: UIButton = {
+        let btn = ViewFactory.createASimpleButtonWith(title: "Select 3")
+        btn.addTarget(self, action: #selector(select3), for: .touchUpInside)
+        return btn
+    }()
+    
     private lazy var stackView: UIStackView = {
         let view = ViewFactory.createASimpleStackView()
         return view
@@ -59,6 +71,8 @@ class FirstViewController: UIViewController {
         stackView.addArrangedSubview(btn)
         stackView.addArrangedSubview(btn2)
         stackView.addArrangedSubview(btn3)
+        stackView.addArrangedSubview(btn4)
+        stackView.addArrangedSubview(btn5)
     }
 
     @objc private func addFourth() {
@@ -73,6 +87,15 @@ class FirstViewController: UIViewController {
     @objc private func showBadge() {
         
         MainTabBarManager.shared().configureBadgeFor(item: .three, with: "10")
+    }
+    
+    @objc private func select2() {
+        
+        MainTabBarManager.shared().select(item: .two)
+    }
+    @objc private func select3() {
+        
+        MainTabBarManager.shared().select(item: .three)
     }
 }
 

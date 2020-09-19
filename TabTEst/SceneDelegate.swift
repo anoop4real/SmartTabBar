@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.windowScene = windowScene
-        MainTabBarManager.shared().loadTabBar(with: .jumbled, selectedTabItem: .four)
+        MainTabBarManager.shared().loadTabBar(with: .base, selectedTabItem: .one)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
